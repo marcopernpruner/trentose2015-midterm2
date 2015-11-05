@@ -4,8 +4,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Put your js and css references here -->
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">  
-  <link rel="stylesheet" href="styles.css">          
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -13,46 +13,37 @@
    <h1><img src="img/logo.png"><span>Lingo</span></h1>
 
       <div class="jumbotron">
-        
+
         <!-- flashcards that should be visible during the practice -->
         <div class="practice">
-          
+
           <!-- cards that are loaded dynamically -->
           <ul class="cards">
-              <!-- This is just an example, you should load this dynamically -->
-              <li id="1" class="current">
-                <h3>Love</h3>
-                <h3 class="solution">Liebe</h3>
-              </li> 
-              <li id="2">
-                <h3>Apple</h3>
-                <h3 class="solution">Apfel</h3>   
-              </li>                                                                                
-          </ul> 
-          
+          </ul>
+
           <!-- the area where the user give feedback about the word -->
-          <div class="options">  
+          <div class="options">
             <p>
               Did you remember the word?
             </p>
-            <p>              
+            <p>
               <button class="btn opt-incorrect">No</button>
               <button class="btn opt-correct">Yes</button>
-            </p>  
+            </p>
           </div>
         </div>
-        
+
         <!-- the area that should be visible after the practice -->
         <div class="final">
           <h3> You remembered <span id="tot-good">XXX</span> of <span id="tot">XXX</span></h3>
         </div>
-      
+
       </div>
      <small>Click on the word to flip and reveal the translation of the word</small>
-          
-  
-  <script src="jquery-2.1.0.min.js"></script>         
-  <script src="app.js"></script>        
+
+
+  <script src="jquery-2.1.0.min.js"></script>
+  <script src="app.js"></script>
   <script src="data.js"></script>
 </body>
 </html>
