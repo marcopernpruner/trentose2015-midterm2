@@ -16,6 +16,42 @@ var tmpl = '<li id="ID">' +
 
 var correct = 0;
 var current = 0;
+var choice_v = "";
+
+function choice() {
+  $(".choice").show();
+  $(".solution").hide();
+  $(".options").hide();
+  $(".final").hide();
+
+  $(".choice .E-G").on("click", function() {
+    choice_v = "E-G";
+  });
+
+  $(".choice .G-E").on("click", function() {
+    choice_v = "G-E";
+  });
+
+  $(".choice").on("click", function() {
+    $(".choice").hide();
+    init();
+    newWord();
+  });
+}
+
+function init() {
+  for (var i=0; i<data.length; i++) {
+    if (choice_v == "E-G") {
+      $(".cards").append(tmpl.replace("ID",i+1)
+                             .replace("WORD",data[i].word_en)
+                             .replace("SOLUTION",data[i].word_de));
+    } else if (choice_v == "G-E") {
+      $(".cards").append(tmpl.replace("ID",i+1)
+                             .replace("WORD",data[i].word_de)
+                             .replace("SOLUTION",data[i].word_en));
+    }
+  }
+}
 
 function newWord() {
   $(".solution").hide();
@@ -35,13 +71,7 @@ function results() {
 }
 
 $(document).ready(function(){
-    for (var i=0; i<data.length; i++) {
-        $(".cards").append(tmpl.replace("ID",i+1)
-                               .replace("WORD",data[i].word_en)
-                               .replace("SOLUTION",data[i].word_de));
-    }
-
-    newWord();
+    choice();
 
     $(".cards").on("click", ".current h3", function() {
       $(this.id+".solution").show();
